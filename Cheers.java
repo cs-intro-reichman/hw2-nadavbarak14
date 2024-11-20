@@ -6,8 +6,11 @@ public class Cheers {
     
             for (int i = 0; i < inputString.length(); i++) {
                 char ch = inputString.charAt(i);
-                String article = (vowels.indexOf(ch) != -1) ? "an" : "a";
-                System.out.println("Give me " + article + " " + ch + ": " + ch + "!");
+                boolean isVowelOrSpecial = vowels.indexOf(ch) >= 0;
+    
+                // Adjust the space after "Give me" based on whether "a" or "an" is used
+                String article = isVowelOrSpecial ? "an " : "a  ";  // Notice the two spaces for "a  "
+                System.out.println("Give me " + article + ch + ": " + ch + "!"); 
             }
     
             System.out.println("What does that spell?");
